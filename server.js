@@ -3,7 +3,7 @@ import productRoutes from "./src/features/product/product.routes.js"
 import bodyParser from "body-parser";
 const app=express();
 
-app.use(bodyParser);
+app.use(bodyParser());
 app.use("/api/v1/products",productRoutes);
 
 app.listen(1234,()=>{

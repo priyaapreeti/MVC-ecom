@@ -9,5 +9,6 @@ const productController = new ProductController();
 
 productRoutes.get('/',productController.getAllProducts);
 productRoutes.post('/',uploads.single("img"),productController.addProduct);
+productRoutes.get('/:id',productController.getOneProduct);
 
 export default productRoutes;
