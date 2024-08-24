@@ -19,7 +19,7 @@ export default class userController {
     if (!result) {
       res.status(404).send("user not found!");
     } else {
-      const token =jwt.sign({ userId: result.userId, email: result.email }, "keyToSecure", {
+      const token =jwt.sign({ userId: result.id, email: result.email }, "keyToSecure", {
         expiresIn: "1h",
       });
       return res.status(200).send("welcome back! your session token is: "+token);
