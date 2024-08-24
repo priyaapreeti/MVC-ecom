@@ -21,6 +21,9 @@ export default class productModel {
   static GetOne(id){
     return products.find((prod)=>prod.id==id);
   }
+  static getFiltered(minP,maxP,cat){
+    return products.filter((prod)=>prod.price>=minP && prod.price<=maxP || prod.category==cat);
+  }
 }
 
 var products = [
@@ -28,7 +31,6 @@ var products = [
     1,
     "shoes",
     "nike shoes",
-    "bohot pyare shoes",
     200,
     "https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/b00277c3-a26b-4d49-bb4d-96745e07f4ee/WMNS+NIKE+AIR+MAX+SC.png",
     "footwear",
@@ -38,7 +40,6 @@ var products = [
     2,
     "frock",
     "doll dress",
-    "beautiful frock",
     500,
     "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRh9Njaf-xK6KUtnHttoB7zYQpsJENw0YhShKXzjk7DvN0kOt1B1tnPTJJicyOus9gtrk-JdSwdn_Y-6kZbp3m-iLW39wqJK3104kl4kmYy",
     "dress",

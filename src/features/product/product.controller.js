@@ -25,4 +25,15 @@ export default class productController {
     }
     return res.status(200).send(product);
   }
+  getFilteredProds(req,res){
+    console.log(req.query);
+    const minp=req.query.minp;
+    const maxp=req.query.maxp;
+    const cat=req.query.cat;
+    const product=productModel.getFiltered(minp,maxp,cat);
+    if(!product){
+      res.status(404).send('Product not found');
+    }
+    return res.status(200).send(product);
+  }
 }
