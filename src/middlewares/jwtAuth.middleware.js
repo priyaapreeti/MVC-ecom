@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-const jwtAuth = (req, res,next) => {
+const jwtAuth = (req, res, next) => {
   const getToken = req.headers["authorization"];
   console.log(getToken);
   if (!getToken) {
@@ -8,6 +8,7 @@ const jwtAuth = (req, res,next) => {
   try {
     const payload = jwt.verify(getToken, "keyToSecure");
     console.log(payload);
+    req.userId = payload.userId;
   } catch (error) {
     res.status(404).send("unauthorised user!");
   }
