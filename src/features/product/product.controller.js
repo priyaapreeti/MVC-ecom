@@ -16,7 +16,15 @@ export default class productController {
     const newData=productModel.add(newProd);
     res.status(201).send(newData);
   }
-  rateProduct() {}
+  rateProduct(req,res) {
+    const userId=req.query.userId;
+    const prodId=req.query.prodId;
+    const rating=req.query.rating;
+    const rate=productModel.rateProduct(userId,prodId,rating);
+    if(rate){
+      res.send(rate);
+    }
+  }
   getOneProduct(req,res) {
     const id=req.params.id;
     const product=productModel.GetOne(id);
