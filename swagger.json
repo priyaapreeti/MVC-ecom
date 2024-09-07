@@ -1,0 +1,40 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ECOM-api",
+    "version": "1.0.0",
+    "description": "Humari Ecom website"
+  },
+  "host": "localhost:1234",
+  "paths": {
+    "/api/v1/users/signin": {
+      "post": {
+        "tags": ["users"],
+        "summary": "Lets a user login",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "login info",
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "pass": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses":{
+            "200":{
+                "description":"OK"
+            },
+            "404":{
+                "description":"incorrect creds or user not found!"
+            }
+        }
+      }
+    }
+  }
+}
