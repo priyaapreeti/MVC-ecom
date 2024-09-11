@@ -6,7 +6,28 @@
     "description": "Humari Ecom website"
   },
   "host": "localhost:1234",
+  "securityDefinitions":{
+    "JWT": {
+        "in":"header",
+        "name":"Authorization",
+        "type":"apiKey"
+    }
+  },
   "paths": {
+    "/api/v1/users": {
+      "get": {
+        "tags": ["users"],
+        "summary": "gets all users's data",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "incorrect creds or user not found!"
+          }
+        }
+      }
+    },
     "/api/v1/users/signin": {
       "post": {
         "tags": ["users"],
@@ -26,13 +47,28 @@
             }
           }
         ],
-        "responses":{
-            "200":{
-                "description":"OK"
-            },
-            "404":{
-                "description":"incorrect creds or user not found!"
-            }
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "incorrect creds or user not found!"
+          }
+        }
+      }
+    },
+    "/api/v1/products": {
+      "get": {
+        "tags": ["products"],
+        "summary": "gets all products data with auth",
+        "security":[{"JWT":{}}],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "incorrect creds or user not found!"
+          }
         }
       }
     }
