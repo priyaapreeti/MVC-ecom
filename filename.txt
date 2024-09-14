@@ -1,0 +1,3 @@
+{"level":"info","message":"/api/v1/users/signin - {\"email\":\"admin@gmail.com\",\"pass\":\"admin\"} \n"}
+{"level":"info","message":"Thu Sep 12 2024 09:41:57 GMT+0530 (India Standard Time) - /api/v1/users/signin - {\"email\":\"admin@gmail.com\",\"pass\":\"admin\"} \n"}
+{"level":"info","message":"Thu Sep 12 2024 09:50:46 GMT+0530 (India Standard Time) - /api/v1/users/signin - {\"email\":\"admin@gmail.com\",\"pass\":\"admin\"}"}

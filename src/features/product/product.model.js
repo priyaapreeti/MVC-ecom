@@ -32,11 +32,11 @@ export default class productModel {
   static rateProduct(userId, productId, rating) {
     const user = userModel.getAll().find((us) => us.id == userId);
     if (!user) {
-      return "user not found!";
+      throw new Error("user not found!");
     }
     const product = products.find((prod) => prod.id == productId);
     if (!product) {
-      return "product not found!";
+      throw new Error("Product not found!");
     }
     if (!product.ratings) {
       product.ratings = [];

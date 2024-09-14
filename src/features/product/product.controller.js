@@ -20,7 +20,13 @@ export default class productController {
     const userId=req.query.userId;
     const prodId=req.query.prodId;
     const rating=req.query.rating;
-    const rate=productModel.rateProduct(userId,prodId,rating);
+    const rate="";
+    try {
+      rate=productModel.rateProduct(userId,prodId,rating);
+    } catch (error) {
+      console.log(error)
+    }
+
     if(rate){
       res.send(rate);
     }
